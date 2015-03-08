@@ -4,8 +4,9 @@
 
 ### Introduction
 
-This docker file will make a CentOS environment, fetch source code from GitHub (shadowsocks-libev).
-Then checkout the latest tagged commit, and compile with Clang & LLVM.
+This docker file will build a CentOS environment on your local Docker, and clone source repo from GitHub (shadowsocks-libev).
+
+Then checkout the latest tagged commit, and compile **shadowsocks-libev** with Clang & LLVM.
 
 ### Usage
 
@@ -14,7 +15,9 @@ Then checkout the latest tagged commit, and compile with Clang & LLVM.
     # docker run --net=host b6bbe4d695d0 \
         ss-server -p <port> -k <password> -m <method> -v -u --fast-open
 
-Replace these parameter with your needs, it will fire up to work, and **--net=host** makes easier for networking without mapping ports.
+Replace these parameters with your needs, it will come to work, and **--net=host** makes networking easier without mapping ports.
+
+You may need **GNU screen**, **init script** or **systemd** to make it running in background.
 
 ---
 
